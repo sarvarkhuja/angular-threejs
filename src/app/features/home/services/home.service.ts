@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { ElementRef, Injectable, NgZone } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { DEFAULT_COLOR } from '../../../core/enum/colors.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class HomeService {
 
   private frameId!: number;
 
-  private DEFAULT_COLOR = '#214f4b';
+  private DEFAULT_COLOR = DEFAULT_COLOR;
   private behaviorSubject = new BehaviorSubject(this.DEFAULT_COLOR);
   observable$ = this.behaviorSubject.asObservable();
 

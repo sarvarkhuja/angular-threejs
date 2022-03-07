@@ -37,6 +37,7 @@ import { SingleEntryCanvasComponent } from './components/single-entry-canvas/sin
     TuiSelectModule,
     TuiDataListModule,
     TuiDataListWrapperModule,
+    IconModule,
   ],
   declarations: [
     HomeComponent,

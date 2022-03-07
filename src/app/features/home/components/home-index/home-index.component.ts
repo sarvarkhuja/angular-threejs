@@ -12,4 +12,8 @@ export class HomeIndexComponent {
   get allEntries(): GetAllEntryList[] {
     return allEntryList;
   }
+  removeItem(index: number) {
+    //TODO: Web/api/deleteSingleEntry/{ID}
+    allEntryList.splice(index, 1);
+  }
 }

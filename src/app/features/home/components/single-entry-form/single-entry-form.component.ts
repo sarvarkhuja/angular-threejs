@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DEFAULT_COLOR } from '../../../../core/enum/colors.enum';
 import { HomeService } from '../../services/home.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SingleEntryFormComponent implements OnInit {
   ];
   form!: FormGroup;
   entryID!: number;
-  color = '#214f4b';
+  color = DEFAULT_COLOR;
   constructor(private data$: HomeService) {}
 
   ngOnInit() {
@@ -23,15 +24,18 @@ export class SingleEntryFormComponent implements OnInit {
   }
 
   createForm() {
+    //TODO: Web/api/getSingleEntry/{ID}
     this.form = new FormGroup({
       colorController: new FormControl(this.color),
     });
   }
   colorChange(event: any) {
+    //TODO:Web/api/updateSingleEntry/{ID}
     this.data$.updateColor(event);
   }
 
   onSubmit() {
+    //TODO:Web/api/updateSingleEntry/{ID}
     console.log(this.form.value);
   }
 }

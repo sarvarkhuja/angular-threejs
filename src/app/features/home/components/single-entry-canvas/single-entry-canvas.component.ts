@@ -19,13 +19,21 @@ export class SingleEntryCanvasComponent implements OnInit, OnDestroy {
   constructor(private data$: HomeService) {}
 
   ngOnInit() {
+    this.resetColor();
     this.createCube();
+  }
+  resetColor() {
+    this.data$.resetColor();
   }
   createCube() {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
 
     this._subscription = this.data$.observable$.subscribe(color => {
-      const material = new THREE.MeshBasicMaterial({ color: new Color(color) });
+      const material = new THREE.MeshBasicMaterial({
+        color: new Color(color),
+        wireframe: true,
+      });
+
       this.cube = new THREE.Mesh(geometry, material);
       this.data$.createScene(this.rendererCanvas, this.cube);
       this.data$.animate(this.cube);

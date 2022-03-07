@@ -9,13 +9,13 @@ import { HomeService } from '../../services/home.service';
 })
 export class SingleEntryFormComponent implements OnInit {
   colors = [
-    { id: '#00ff00', name: 'green' },
+    { id: '#214f4b', name: 'green' },
     { id: '#3030fd', name: 'blue' },
-    { id: '#ffdd2d', name: 'yellow' },
+    { id: '#bb9f06', name: 'yellow' },
   ];
   form!: FormGroup;
   entryID!: number;
-  color = '#00ff00';
+  color = '#214f4b';
   constructor(private data$: HomeService) {}
 
   ngOnInit() {

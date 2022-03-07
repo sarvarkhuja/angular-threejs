@@ -14,12 +14,15 @@ export class HomeService {
 
   private frameId!: number;
 
-  private DEFAULT_COLOR = '#00ff00';
+  private DEFAULT_COLOR = '#214f4b';
   private behaviorSubject = new BehaviorSubject(this.DEFAULT_COLOR);
   observable$ = this.behaviorSubject.asObservable();
 
   constructor(private ngZone: NgZone) {}
 
+  resetColor() {
+    this.behaviorSubject.next(this.DEFAULT_COLOR);
+  }
   updateColor(color: any) {
     this.behaviorSubject.next(color);
   }

@@ -14,9 +14,9 @@ import {
 } from '@taiga-ui/kit';
 
 import { IconModule } from '../../shared/ui/icon/icon.module';
-import { HomeComponent } from './home.component';
 import { HomeIndexComponent } from './components/home-index/home-index.component';
 import { HomeRoutes } from './home.routing';
+import { HomeComponent } from './home.component';
 import { ColorNamePipe } from './components/single-entry-form/color-name.pipe';
 import { SingleEntryFormComponent } from './components/single-entry-form/single-entry-form.component';
 import { SingleEntryComponent } from './components/single-entry/single-entry.component';

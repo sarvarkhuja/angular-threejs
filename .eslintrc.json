@@ -36,8 +36,7 @@
             "alphabetize": {
               "order": "asc"
             },
-            "groups": ["builtin", "external"],
-            "newlines-between": "always"
+            "groups": ["builtin", "external"]
           }
         ],
         "@typescript-eslint/member-ordering": [

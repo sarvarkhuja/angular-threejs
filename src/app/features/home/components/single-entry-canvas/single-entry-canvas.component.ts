@@ -1,8 +1,8 @@
-import { Subscription } from 'rxjs';
-import { HomeService } from './../../services/home.service';
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import * as THREE from 'three';
 import { Color } from 'three';
+import { HomeService } from './../../services/home.service';
 
 @Component({
   selector: 'aa-single-entry-canvas',
@@ -10,12 +10,13 @@ import { Color } from 'three';
   styleUrls: ['./single-entry-canvas.component.scss'],
 })
 export class SingleEntryCanvasComponent implements OnInit, OnDestroy {
+  private _subscription!: Subscription;
+
   @ViewChild('rendererCanvas', { static: true })
   rendererCanvas!: ElementRef<HTMLCanvasElement>;
 
   private cube!: THREE.Mesh;
   constructor(private data$: HomeService) {}
-  private _subscription!: Subscription;
 
   ngOnInit() {
     this.createCube();

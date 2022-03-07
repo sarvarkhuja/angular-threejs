@@ -13,20 +13,17 @@
         ></button>
       </tui-hosted-dropdown>
       <ng-template #dropdownMenu>
-        <tui-data-list role="menu">
-          <a
-            *ngFor="let item of menuItems"
-            #rla="routerLinkActive"
-            tuiOption
-            role="menuitemradio"
-            routerLinkActive
-            [attr.aria-checked]="rla.isActive"
-            [routerLink]="item.link"
-          >
-            {{ item.label }}
-            <tui-svg *ngIf="rla.isActive" src="tuiIconCheckLarge"></tui-svg>
-          </a>
-        </tui-data-list>
+        <a
+          *ngFor="let item of menuItems"
+          #rla="routerLinkActive"
+          role="menuitemradio"
+          routerLinkActive
+          [attr.aria-checked]="rla.isActive"
+          [routerLink]="item.link"
+        >
+          {{ item.label }}
+          <tui-svg *ngIf="rla.isActive" src="tuiIconCheckLarge"></tui-svg>
+        </a>
       </ng-template>
     </div>
     <!-- END: Menu Dropdown -->
@@ -93,17 +90,5 @@
       </a>
     </ng-template>
     <!-- END: Auth user menu -->
-
-    <!-- BEGIN: Github link -->
-    <a
-      href="https://github.com/nikosanif/angular-authentication"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="ml-4 text-2xl"
-      [tuiHint]="'Source code'"
-    >
-      <fa-icon [icon]="['fab', 'github']"></fa-icon>
-    </a>
-    <!-- END: Github link -->
   </div>
 </header>

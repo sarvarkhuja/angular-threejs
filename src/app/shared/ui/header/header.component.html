@@ -1,14 +1,14 @@
 <header>
-  <div class="aa--flex aa--items-center">
+  <div class="flex items-center">
     <!-- BEGIN: Menu Dropdown -->
-    <div class="aa--inline lg:aa--hidden">
+    <div class="inline lg:hidden">
       <tui-hosted-dropdown [content]="dropdownMenu">
         <button
           tuiIconButton
           type="button"
           appearance="flat"
           size="m"
-          class="aa--mr-2"
+          class="mr-2"
           icon="tuiIconAlignJustifyLarge"
         ></button>
       </tui-hosted-dropdown>
@@ -32,17 +32,16 @@
     <!-- END: Menu Dropdown -->
 
     <!-- BEGIN: Title -->
-    <a routerLink="/home" class="aa--flex aa--items-center">
+    <a routerLink="/home" class="flex items-center">
       <img src="/assets/logo.svg" class="logo-icon" />
-      <span class="aa--text-xl aa--font-semibold">
-        <span class="aa--hidden md:aa--inline">Angular Authentication</span>
-        <span class="aa--inline md:aa--hidden">Auth</span>
+      <span class="text-xl font-semibold">
+        <span class="hidden md:inline">3D Configurator</span>
       </span>
     </a>
     <!-- END: Title -->
 
     <!-- BEGIN: Main menu items -->
-    <div class="menu-items aa--hidden lg:aa--inline">
+    <div class="menu-items hidden lg:inline">
       <a
         *ngFor="let item of menuItems"
         tuiButton
@@ -59,13 +58,13 @@
     <!-- END: Main menu items -->
   </div>
 
-  <div class="aa--flex aa--items-center">
+  <div class="flex items-center">
     <!-- BEGIN: Auth user menu -->
     <div *ngIf="authUser$ | async as user; else login">
       <tui-hosted-dropdown tuiDropdownAlign="left" [content]="userDropdown">
         <tui-avatar
           [text]="user.firstName + ' ' + user.lastName"
-          class="aa--cursor-pointer"
+          class="cursor-pointer"
         ></tui-avatar>
       </tui-hosted-dropdown>
       <ng-template #userDropdown>
@@ -73,7 +72,7 @@
           <tui-opt-group [label]="user.firstName + ' ' + user.lastName">
             <button tuiOption (click)="logout()">
               <span>
-                <tui-svg class="aa--mr-2" src="tuiIconLogoutLarge"></tui-svg>
+                <tui-svg class="mr-2" src="tuiIconLogoutLarge"></tui-svg>
                 Logout
               </span>
             </button>
@@ -100,7 +99,7 @@
       href="https://github.com/nikosanif/angular-authentication"
       target="_blank"
       rel="noopener noreferrer"
-      class="aa--ml-4 aa--text-2xl"
+      class="ml-4 text-2xl"
       [tuiHint]="'Source code'"
     >
       <fa-icon [icon]="['fab', 'github']"></fa-icon>

@@ -1,0 +1,25 @@
+<form [formGroup]="form" class="mt-5" (ngSubmit)="onSubmit()">
+  <div class="tui-row tui-row_sme">
+    <div class="tui-col_2">
+      <div class="tui-form__row">
+        <tui-select
+          formControlName="colorController"
+          (ngModelChange)="colorChange($event)"
+          valueContent="{{ form.value.colorController | ColorNamePipe: colors }}"
+        >
+          <input tuiTextfield placeholder="Color" />
+          <ng-template tuiDataList>
+            <tui-data-list>
+              <button *ngFor="let item of colors" tuiOption [value]="item.id">
+                {{ item.name }}
+              </button>
+            </tui-data-list>
+          </ng-template>
+        </tui-select>
+      </div>
+    </div>
+  </div>
+  <div class="tui-form__buttons">
+    <button tuiButton size="l" type="submit" class="tui-form__button">Submit</button>
+  </div>
+</form>

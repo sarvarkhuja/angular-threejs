@@ -1,7 +1,7 @@
-<div class="aa--container aa--flex aa--justify-center">
+<div class="container flex justify-center">
   <div class="form-wrapper">
-    <h1 class="aa--mb-8">
-      <span class="aa--font-semibold aa--text-primary">Login</span>
+    <h1 class="mb-8">
+      <span class="font-semibold text-primary">Login</span>
       your account
     </h1>
 
@@ -10,7 +10,7 @@
         Use account <b>admin</b> and password <b>demo</b> to continue.
       </tui-notification>
 
-      <tui-notification *ngIf="showLoginError$ | async" status="error" class="aa--mt-4">
+      <tui-notification *ngIf="showLoginError$ | async" status="error" class="mt-4">
         Ooops! The login details are incorrect.
       </tui-notification>
 

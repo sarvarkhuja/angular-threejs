@@ -1,6 +1,6 @@
-# Contributing to Angular Authentication
+# Contributing to 3D Configurator
 
-I would love for you to contribute to Angular Authentication!
+I would love for you to contribute to 3D Configurator!
 As a contributor, here are the guidelines we would like you to follow:
 
 - [Bugs and Feature Requests](#issue)

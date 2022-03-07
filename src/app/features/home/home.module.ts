@@ -1,11 +1,27 @@
+import { SingleEntryFormComponent } from './components/single-entry-form/single-entry-form.component';
+import { SingleEntryComponent } from './components/single-entry/single-entry.component';
+import { SingleEntryCanvasComponent } from './components/single-entry-canvas/single-entry-canvas.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TuiButtonModule, TuiHintModule, TuiLinkModule } from '@taiga-ui/core';
-import { TuiAvatarModule } from '@taiga-ui/kit';
+import {
+  TuiButtonModule,
+  TuiDataListModule,
+  TuiHintModule,
+  TuiLinkModule,
+} from '@taiga-ui/core';
+import {
+  TuiAvatarModule,
+  TuiDataListWrapperModule,
+  TuiSelectModule,
+} from '@taiga-ui/kit';
 
 import { IconModule } from '../../shared/ui/icon/icon.module';
 import { HomeComponent } from './home.component';
+import { HomeIndexComponent } from './components/home-index/home-index.component';
+import { HomeRoutes } from './home.routing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ColorNamePipe } from './components/single-entry-form/color-name.pipe';
 
 const routes: Routes = [{ path: '', component: HomeComponent }];
 
@@ -16,9 +32,22 @@ const routes: Routes = [{ path: '', component: HomeComponent }];
     TuiLinkModule,
     TuiHintModule,
     TuiAvatarModule,
-    RouterModule.forChild(routes),
     IconModule,
+    HomeRoutes,
+    FormsModule,
+    ReactiveFormsModule,
+    TuiDataListModule,
+    TuiSelectModule,
+    TuiDataListModule,
+    TuiDataListWrapperModule,
   ],
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    HomeIndexComponent,
+    SingleEntryCanvasComponent,
+    SingleEntryComponent,
+    SingleEntryFormComponent,
+    ColorNamePipe,
+  ],
 })
 export class HomeModule {}

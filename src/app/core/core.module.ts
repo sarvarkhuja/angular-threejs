@@ -27,7 +27,7 @@ import { FakeApiService } from './fake-api';
     EffectsModule.forRoot([]),
     environment.production
       ? []
-      : StoreDevtoolsModule.instrument({ name: 'Angular Authentication' }),
+      : StoreDevtoolsModule.instrument({ name: '3D Configurator' }),
 
     // Application
     AuthModule,

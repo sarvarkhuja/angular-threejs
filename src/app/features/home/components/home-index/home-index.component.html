@@ -1,0 +1,32 @@
+<!-- BEGIN: Features -->
+<section>
+  <h2 class="mb-5 text-center">List of available entries</h2>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
+    <div *ngFor="let singleEntry of allEntries" class="card">
+      <div class="card-header">
+        <tui-avatar
+          [text]="singleEntry.title"
+          [autoColor]="true"
+          size="s"
+          [rounded]="true"
+          class="mr-2"
+        ></tui-avatar>
+        <div class="card-title">{{ singleEntry.title }}</div>
+      </div>
+      <div class="card-content">
+        <p class="text-gray-600">{{ singleEntry.description }}</p>
+
+        <a
+          tuiButton
+          type="button"
+          appearance="primary"
+          class="tui-space_right-3 tui-space_bottom-3 mt-5"
+          [routerLink]="['/home/edit', singleEntry.entryID]"
+        >
+          Open Tool
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Features -->

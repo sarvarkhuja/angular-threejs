@@ -11,9 +11,8 @@ describe('SingleEntryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SingleEntryComponent ]
-    })
-    .compileComponents();
+      declarations: [SingleEntryComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

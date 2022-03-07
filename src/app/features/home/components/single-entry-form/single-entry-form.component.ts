@@ -31,5 +31,7 @@ export class SingleEntryFormComponent implements OnInit {
     this.data$.updateColor(event);
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.log(this.form.value);
+  }
 }

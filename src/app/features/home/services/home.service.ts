@@ -14,16 +14,16 @@ export class HomeService {
 
   private frameId!: number;
 
-  public DEFAULT_COLOR = '#00ff00';
+  private DEFAULT_COLOR = '#00ff00';
   private behaviorSubject = new BehaviorSubject(this.DEFAULT_COLOR);
-  public observable$ = this.behaviorSubject.asObservable();
+  observable$ = this.behaviorSubject.asObservable();
 
-  public constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone) {}
 
-  public updateColor(color: any) {
+  updateColor(color: any) {
     this.behaviorSubject.next(color);
   }
-  public createScene(canvas: ElementRef<HTMLCanvasElement>, cube: THREE.Mesh): void {
+  createScene(canvas: ElementRef<HTMLCanvasElement>, cube: THREE.Mesh): void {
     // The first step is to get the reference of the canvas element from our HTML document
     this.canvas = canvas.nativeElement;
 
@@ -53,7 +53,7 @@ export class HomeService {
     this.scene.add(cube);
   }
 
-  public animate(cube: THREE.Mesh): void {
+  animate(cube: THREE.Mesh): void {
     // We have to run this outside angular zones,
     // because it could trigger heavy changeDetection cycles.
     this.ngZone.runOutsideAngular(() => {
@@ -71,7 +71,7 @@ export class HomeService {
     });
   }
 
-  public render(cube: THREE.Mesh): void {
+  render(cube: THREE.Mesh): void {
     this.frameId = requestAnimationFrame(() => {
       this.render(cube);
     });
@@ -80,7 +80,7 @@ export class HomeService {
     this.renderer.render(this.scene, this.camera);
   }
 
-  public resize(): void {
+  resize(): void {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
@@ -90,7 +90,7 @@ export class HomeService {
     this.renderer.setSize(width, height);
   }
 
-  public ngOnDestroy(): void {
+  ngOnDestroy(): void {
     if (this.frameId != null) {
       cancelAnimationFrame(this.frameId);
     }

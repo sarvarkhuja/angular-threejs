@@ -1,8 +1,8 @@
+import { Subscription } from 'rxjs';
 import { HomeService } from './../../services/home.service';
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 import { Color } from 'three';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'aa-single-entry-canvas',
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class SingleEntryCanvasComponent implements OnInit, OnDestroy {
   @ViewChild('rendererCanvas', { static: true })
-  public rendererCanvas!: ElementRef<HTMLCanvasElement>;
+  rendererCanvas!: ElementRef<HTMLCanvasElement>;
 
   private cube!: THREE.Mesh;
   constructor(private data$: HomeService) {}
@@ -31,8 +31,6 @@ export class SingleEntryCanvasComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this._subscription.unsubscribe();
   }
 }

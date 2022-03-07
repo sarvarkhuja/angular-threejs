@@ -4,7 +4,4 @@ export interface GetAllEntryList {
   description: string;
   addedDate: Date;
   isActive: true;
-  link: string | null;
-  github: string | null;
-  docs: string | null;
 }

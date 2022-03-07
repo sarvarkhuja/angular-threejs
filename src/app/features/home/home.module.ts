@@ -1,9 +1,6 @@
-import { SingleEntryFormComponent } from './components/single-entry-form/single-entry-form.component';
-import { SingleEntryComponent } from './components/single-entry/single-entry.component';
-import { SingleEntryCanvasComponent } from './components/single-entry-canvas/single-entry-canvas.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   TuiButtonModule,
   TuiDataListModule,
@@ -20,10 +17,10 @@ import { IconModule } from '../../shared/ui/icon/icon.module';
 import { HomeComponent } from './home.component';
 import { HomeIndexComponent } from './components/home-index/home-index.component';
 import { HomeRoutes } from './home.routing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ColorNamePipe } from './components/single-entry-form/color-name.pipe';
-
-const routes: Routes = [{ path: '', component: HomeComponent }];
+import { SingleEntryFormComponent } from './components/single-entry-form/single-entry-form.component';
+import { SingleEntryComponent } from './components/single-entry/single-entry.component';
+import { SingleEntryCanvasComponent } from './components/single-entry-canvas/single-entry-canvas.component';
 
 @NgModule({
   imports: [

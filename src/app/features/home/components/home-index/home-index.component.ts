@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { allEntryList } from '../../models/all-entry-list.model';
 import { GetAllEntryList } from '../../models/get-all-entry-list.model';
 

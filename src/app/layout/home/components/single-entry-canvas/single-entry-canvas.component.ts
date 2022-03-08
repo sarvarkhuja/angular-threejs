@@ -2,7 +2,7 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
 import { Subscription } from 'rxjs';
 import * as THREE from 'three';
 import { Color } from 'three';
-import { HomeService } from './../../services/home.service';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'aa-single-entry-canvas',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DEFAULT_COLOR } from '../../../../core/enum/colors.enum';
+import { DEFAULT_COLOR_LIST } from '../../models/color-list.model';
 import { HomeService } from '../../services/home.service';
 
 @Component({
@@ -9,11 +10,7 @@ import { HomeService } from '../../services/home.service';
   styleUrls: ['./single-entry-form.component.scss'],
 })
 export class SingleEntryFormComponent implements OnInit {
-  colors = [
-    { id: '#214f4b', name: 'green' },
-    { id: '#3030fd', name: 'blue' },
-    { id: '#bb9f06', name: 'yellow' },
-  ];
+  colors = DEFAULT_COLOR_LIST;
   form!: FormGroup;
   entryID!: number;
   color = DEFAULT_COLOR;

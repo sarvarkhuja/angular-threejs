@@ -13,7 +13,7 @@ import {
   TuiSelectModule,
 } from '@taiga-ui/kit';
 
-import { IconModule } from '../../shared/ui/icon/icon.module';
+import { IconModule } from '../../shared/components/icon/icon.module';
 import { HomeIndexComponent } from './components/home-index/home-index.component';
 import { HomeRoutes } from './home.routing';
 import { HomeComponent } from './home.component';

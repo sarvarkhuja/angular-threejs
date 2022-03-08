@@ -6,8 +6,8 @@ import { TuiDialogModule, TuiNotificationsModule, TuiRootModule } from '@taiga-u
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { CoreModule } from './core/core.module';
-import { FooterModule } from './shared/ui/footer/footer.module';
-import { HeaderModule } from './shared/ui/header/header.module';
+import { FooterModule } from './shared/components/footer/footer.module';
+import { HeaderModule } from './shared/components/header/header.module';
 
 @NgModule({
   declarations: [AppComponent],

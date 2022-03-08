@@ -5,9 +5,9 @@ import { ReactiveComponentModule } from '@ngrx/component';
 import { TuiNotificationModule } from '@taiga-ui/core';
 import { TuiBadgeModule } from '@taiga-ui/kit';
 
-import { SecuredFeatComponent } from './secured-feat.component';
+import { DashboardComponent } from './dashboard.component';
 
-const routes: Routes = [{ path: '', component: SecuredFeatComponent }];
+const routes: Routes = [{ path: '', component: DashboardComponent }];
 
 @NgModule({
   imports: [
@@ -17,6 +17,6 @@ const routes: Routes = [{ path: '', component: SecuredFeatComponent }];
     TuiBadgeModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [SecuredFeatComponent],
+  declarations: [DashboardComponent],
 })
-export class SecuredFeatModule {}
+export class DashboardModule {}

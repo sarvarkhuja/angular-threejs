@@ -29,11 +29,6 @@ An Angular application that demonstrates best practices for user authentication 
 
 ## Features
 
-### Authentication Flows
-
-![3D Configurator Demo](https://raw.githubusercontent.com/nikosanif/angular-authentication/main/meta/auth-init-flow.png)
-![3D Configurator Demo](https://raw.githubusercontent.com/nikosanif/angular-authentication/main/meta/auth-login-flow.png)
-
 ### Other Features
 
 - Lazy loading of Angular modules
@@ -52,55 +47,3 @@ An Angular application that demonstrates best practices for user authentication 
   - Prettier
   - Husky
   - standard-vesrion
-
-## High-level Design
-
-Below is the high-level structure of the application.
-
-```sh
-./src
-├── app
-│   ├── app # root app component
-│   │   ├── app.component.html
-│   │   ├── app.component.scss
-│   │   └── app.component.ts
-│   │
-│   ├── app-routing.module.ts
-│   ├── app.module.ts
-│   │
-│   ├── auth # includes authentication logic
-│   │   ├── auth.module.ts
-│   │   ├── auth.service.ts
-│   │   ├── guards
-│   │   ├── interceptors
-│   │   ├── login
-│   │   └── store
-│   │
-│   ├── core # includes core utilities
-│   │   ├── core.module.ts
-│   │   ├── fake-api
-│   │   └── services
-│   │
-│   ├── features # all features of application
-│   │   ├── about
-│   │   ├── home
-│   │   └── secured-feat
-│   │
-│   └── shared # shared UI modules and utilities
-│       ├── ui
-│       └── util
-│
-├── assets
-│   ├── ...
-│
-├── environments
-│   ├── environment.prod.ts
-│   └── environment.ts
-│
-├── ...
-│
-└── theme # global theme styles
-    ├── _components.scss
-    ├── _typography.scss
-    └── index.scss
-```

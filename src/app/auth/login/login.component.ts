@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AuthFacade } from '../store/auth.facade';
 
@@ -9,18 +9,15 @@ import { AuthFacade } from '../store/auth.facade';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  readonly loginForm = new FormGroup({
-    username: new FormControl('', {
-      validators: [Validators.required],
-    }),
-    password: new FormControl('', {
-      validators: [Validators.required],
-    }),
+  readonly loginForm = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required],
   });
+
   isLoading$ = this.authFacade.isLoadingLogin$;
   showLoginError$ = this.authFacade.hasLoginError$;
 
-  constructor(private authFacade: AuthFacade) {}
+  constructor(private authFacade: AuthFacade, private fb: FormBuilder) {}
 
   submit() {
     const { username, password } = this.loginForm.value;

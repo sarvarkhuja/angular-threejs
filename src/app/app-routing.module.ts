@@ -11,15 +11,13 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule),
+    loadChildren: () => import('./layout/home/home.module').then(m => m.HomeModule),
   },
   {
-    path: 'secured-feat',
+    path: 'dashboard',
     canActivate: [AuthGuardService],
     loadChildren: () =>
-      import('./features/secured-feat/secured-feat.module').then(
-        m => m.SecuredFeatModule
-      ),
+      import('./layout/dashboard/dashboard.module').then(m => m.DashboardModule),
   },
   {
     path: '**',

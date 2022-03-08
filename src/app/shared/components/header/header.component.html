@@ -38,19 +38,20 @@
     <!-- END: Title -->
 
     <!-- BEGIN: Main menu items -->
-    <div class="menu-items hidden lg:inline">
-      <a
-        *ngFor="let item of menuItems"
-        tuiButton
-        size="m"
-        [routerLink]="item.link"
-        routerLinkActive="active"
-        #rla="routerLinkActive"
-        [appearance]="rla.isActive ? 'primary' : 'flat'"
-        [icon]="item.icon!"
-      >
-        {{ item.label }}
-      </a>
+    <div class="menu-items hidden lg:flex">
+      <div *ngFor="let item of menuItems" class="px-2">
+        <a
+          tuiButton
+          size="m"
+          [routerLink]="item.link"
+          routerLinkActive="active"
+          #rla="routerLinkActive"
+          [appearance]="rla.isActive ? 'primary' : 'flat'"
+          [icon]="item.icon!"
+        >
+          {{ item.label }}
+        </a>
+      </div>
     </div>
     <!-- END: Main menu items -->
   </div>

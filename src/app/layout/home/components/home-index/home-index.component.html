@@ -2,7 +2,7 @@
 <section>
   <h2 class="mb-5 text-center">List of available entries</h2>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
-    <div *ngFor="let singleEntry of allEntries; let i = index" class="card">
+    <div *ngFor="let singleEntry of allEntries; let index = index" class="card">
       <div class="card-header relative">
         <button
           tuiIconButton
@@ -11,7 +11,7 @@
           appearance="icon"
           icon="tuiIconCloseLarge"
           class="tui-space_right-3 tui-space_bottom-3"
-          (click)="removeItem(i)"
+          (click)="removeItem(index)"
         ></button>
         <tui-avatar
           [text]="singleEntry.title"
